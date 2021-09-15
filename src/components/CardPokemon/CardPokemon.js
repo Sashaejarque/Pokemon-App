@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 import "./cardPokemon.css";
 
-export const CardPokemon = ({pokemon}) => {
-    return ( 
-      <div className="contenedor">
+export const CardPokemon = ({ pokemon }) => {
+  return (
+    <div className="contenedor">
       <div className="content">
         <div className="name-card">
           <p>{pokemon.name.english}</p>
@@ -25,10 +25,8 @@ export const CardPokemon = ({pokemon}) => {
         </div>
       </div>
       <div className="img-card">
-        <img src={pokemon.hires} className="animation"/>
+        <img src={pokemon.hires} className="animation" />
       </div>
     </div>
-        
-     );
-}
- 
+  );
+};
