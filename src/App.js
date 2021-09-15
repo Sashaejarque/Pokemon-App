@@ -1,24 +1,51 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect, Fragment } from "react";
+import "@fontsource/karla";
+import { CardPokemon } from "./components";
+import { Header } from "./components";
 
 function App() {
+  //State de pokemonCard
+  const [pokemon, setPokemon] = useState({
+    id: 0,
+    name: {
+      english: "",
+    },
+    base: {
+      Attack: "",
+      Defense: "",
+    },
+    type: [],
+    hires: "",
+  });
+
+  //peticion a la api
+  const consultarApi = async () => {
+    const api = await fetch("https://app.pokemon-api.xyz/pokemon/random");
+    const poke = await api.json();
+    setPokemon(poke);
+    console.log(pokemon);
+  };
+
+  useEffect(() => {
+    consultarApi();
+    console.log({ pokemon });
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <Header />
+      <div className="app-container">
+        <CardPokemon pokemon={pokemon} />
+        <CardPokemon pokemon={pokemon} />
+        <CardPokemon pokemon={pokemon} />
+        <CardPokemon pokemon={pokemon} />
+        <CardPokemon pokemon={pokemon} />
+        <CardPokemon pokemon={pokemon} />
+        <CardPokemon pokemon={pokemon} />
+        <CardPokemon pokemon={pokemon} />
+        <CardPokemon pokemon={pokemon} />
+      </div>
+    </Fragment>
   );
 }
 
