@@ -1,6 +1,7 @@
 import React from 'react';
 import './header.css';
 import Logo from './Logo';
+import Botones from './Botones';
 
 export const Header = () => {
   return (
@@ -8,14 +9,7 @@ export const Header = () => {
       <div className="nav-logo">
         <Logo />
       </div>
-      <nav className="nav-botton">
-        <ul className="nav-links">
-          <li>Home</li>
-          <li>Pokedex</li>
-          <li>Legendaries</li>
-          <li>Documentation</li>
-        </ul>
-      </nav>
+      <Botones />
     </div>
   );
 };

@@ -1,41 +1,20 @@
-import React, { useState, useEffect, Fragment } from "react";
-import "@fontsource/karla";
-import { CardPokemon } from "./components";
-import { Header } from "./components";
-import { getAllPokemons } from "./services";
+import React, { useState, useEffect, Fragment } from 'react';
+import { Route, Routes, BrowserRouter, Link, useNavigate } from 'react-router-dom';
+import '@fontsource/karla';
+import { Header } from './components';
+import { PantallaInicial } from './components';
+import { Home } from './components/CardPokemon/Home';
 
 function App() {
-  //State de pokemonCard
-  const [pokemones, setPokemon] = useState([
-    {
-      id: 0,
-      name: {
-        english: "",
-      },
-      base: {
-        Attack: "",
-        Defense: "",
-      },
-      type: [],
-      hires: "",
-    },
-  ]);
-
-  useEffect(() => {
-    getAllPokemons().then((pokemos) => {
-      setPokemon(pokemos.filter((pokemon) => !!pokemon.base?.Defense));
-      console.log({ pokemos });
-    });
-  }, []);
-
   return (
     <Fragment>
       <Header />
-      <div className="app-container">
-        {pokemones.map((pokemon) => (
-          <CardPokemon pokemon={pokemon} />
-        ))}
-      </div>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<PantallaInicial />} />
+          <Route path="/home" element={<Home />} />
+        </Routes>
+      </BrowserRouter>
     </Fragment>
   );
 }
