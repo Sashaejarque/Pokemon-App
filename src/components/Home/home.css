@@ -1,0 +1,14 @@
+.cont-card-pokemon {
+  max-width: 1136px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 18px;
+  padding: 20px;
+}
+
+.content-card {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}

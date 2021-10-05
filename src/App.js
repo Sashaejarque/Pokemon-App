@@ -1,21 +1,19 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { Route, Routes, BrowserRouter, Link, useNavigate } from 'react-router-dom';
 import '@fontsource/karla';
-import { Header } from './components';
 import { PantallaInicial } from './components';
-import { Home } from './components/CardPokemon/Home';
+import { Home } from './components/Home';
+import { Error404 } from './components/Error404/Error404';
 
 function App() {
   return (
-    <Fragment>
-      <Header />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<PantallaInicial />} />
-          <Route path="/home" element={<Home />} />
-        </Routes>
-      </BrowserRouter>
-    </Fragment>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<PantallaInicial />} />
+        <Route path="/home" element={<Home />} />
+        <Route path="*" element={<Error404 />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
