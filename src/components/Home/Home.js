@@ -5,6 +5,7 @@ import { getAllPokemons } from '../../services';
 import { Search } from '../Search/Search';
 import { Header } from '..';
 import './home.css';
+import { Loading } from '..';
 
 export const Home = () => {
   //State de pokemonCard
@@ -22,13 +23,22 @@ export const Home = () => {
       hires: '',
     },
   ]);
+const [loading, setloading] = useState(false);
 
   useEffect(() => {
+    setloading(true)
     getAllPokemons().then((pokemos) => {
       setPokemon(pokemos.filter((pokemon) => !!pokemon.base?.Defense));
-      console.log({ pokemos });
+      setloading(false);
     });
   }, []);
+
+  if (loading) return (
+  <div>
+    <Header/>
+    <Search/>
+    <Loading/>
+  </div>)
 
   return (
     <div className="page-container">
@@ -40,13 +50,12 @@ export const Home = () => {
             <CardPokemon pokemon={pokemon} />
           ))}
         </div>
-      </div>
+      </div> 
+      
+      
     </div>
   );
 };
 
-/*{pokemones.map((pokemon) => (
-        <CardPokemon pokemon={pokemon} />
-      ))}*/
 
-/*<CardPokemon pokemon={pokemones.map(pokemon => ( <CardPokemon pokemon={pokemon}/>))} />  */
+
