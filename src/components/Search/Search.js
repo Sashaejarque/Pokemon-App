@@ -1,6 +1,7 @@
 import React from 'react';
 import './search.css';
 import { Select } from '../Select/Select';
+import { Input } from '..';
 
 export const Search = () => {
   return (
@@ -9,7 +10,7 @@ export const Search = () => {
         <h1>800 Pokemons for you to choose your favorite</h1>
       </div>
       <div className="input-search">
-        <input type="search" placeholder="  Encuentra tu Pokemon..." />
+        <Input type="search" placeholder="  Encuentra tu Pokemon..." />
       </div>
       <div className="search-select">
         <Select

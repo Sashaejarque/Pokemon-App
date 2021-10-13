@@ -1,31 +1,19 @@
-import React from "react";
-import PropTypes from 'prop-types';
+import React,{useState} from 'react';
+import './input.css';
 
 
-export const Input = ({styleclass,placeholder,type,label,classlabel}) => {
+
+export const Input = ({ placeholder, type, label, marginVertical=0, name, handleEvent }) => {
+  
+ 
   
   return (
-      <div className={styleclass}>
-        <div className={classlabel}>
+    <div className="container" style={{margin: `${marginVertical}px 0` }}>
+      {label && <div className="label-wrapper">
         <label>{label}</label>
-        </div>
-        <input type={type} placeholder={placeholder} />
-      </div>
+      </div> }
+      <input type={type} placeholder={placeholder} className='input' name={name} onChange={handleEvent} />
+    </div>
   );
 };
 
-Input.propTypes = {
-  styleclass: PropTypes.string,
-  placeholder: PropTypes.string,
-  type: PropTypes.string,
-  label: PropTypes.string,
-  classlabel: PropTypes.string
-}
-
-Input.defaultProps = {
-  styleclass: '',
-  placeholder: '',
-  type: '',
-  label: '',
-  classlabel: ''
-}

@@ -6,8 +6,13 @@ import { Search } from '../Search/Search';
 import { Header } from '..';
 import './home.css';
 import { Loading } from '..';
+import { Modal } from '../Modal/Modal';
 
 export const Home = () => {
+  const [modalIsOpen, setIsOpen] = React.useState(false);
+
+  const [pokemonSelected, setPokemonSelected] = useState(null);
+
   //State de pokemonCard
   const [pokemones, setPokemon] = useState([
     {
@@ -23,39 +28,50 @@ export const Home = () => {
       hires: '',
     },
   ]);
-const [loading, setloading] = useState(false);
+  const [loading, setloading] = useState(false);
 
   useEffect(() => {
-    setloading(true)
+    setloading(true);
     getAllPokemons().then((pokemos) => {
       setPokemon(pokemos.filter((pokemon) => !!pokemon.base?.Defense));
       setloading(false);
     });
   }, []);
 
-  if (loading) return (
-  <div>
-    <Header/>
-    <Search/>
-    <Loading/>
-  </div>)
+  if (loading)
+    return (
+      <div>
+        <Header />
+        <Search />
+        <Loading />
+      </div>
+    );
 
   return (
     <div className="page-container">
       <Header />
       <Search />
-      <div className='content-card'>
+      <Modal
+        open={pokemonSelected !== null}
+        closeModal={() => {
+          setPokemonSelected(null);
+        }}
+      >
+        <CardPokemon pokemon={pokemonSelected} />
+      </Modal>
+      <div className="content-card">
         <div className="cont-card-pokemon">
           {pokemones.map((pokemon) => (
-            <CardPokemon pokemon={pokemon} />
+            <CardPokemon
+              onClick={(pokemonId) => {
+                const pokemonClicked = pokemones.find((pok) => pok.id === pokemonId);
+                setPokemonSelected(pokemonClicked);
+              }}
+              pokemon={pokemon}
+            />
           ))}
         </div>
-      </div> 
-      
-      
+      </div>
     </div>
   );
 };
-
-
-

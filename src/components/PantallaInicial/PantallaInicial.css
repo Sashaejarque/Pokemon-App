@@ -21,13 +21,6 @@
   flex-direction: column;
 }
 
-.form-inicial input,
-select {
-  padding: 5px;
-  margin: 10px;
-
-  background-color: #ffffff;
-}
 .titulo-inicial {
   font-size: 200%;
   margin: 25px;
@@ -36,21 +29,9 @@ select {
   display: flex;
   font-weight: 800;
 }
-.label-form {
-  display: flex;
-  justify-content: center;
-  font-size: 20px;
-}
-.form-inicial input {
-  border-radius: 10px;
-  border: 0;
-  width: 90%;
-}
-.form-inicial select {
-  border-radius: 10px;
-  border: 0;
-  width: 90%;
-}
+
+
+
 .form-content {
   width: 70%;
   height: 75%;
@@ -74,3 +55,4 @@ button {
 .cont-container {
    background: linear-gradient(180deg, #f5db13 0%, #f2b807 100%);
 }
+

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Header } from '..';
 import { useNavigate } from 'react-router';
 import './PantallaInicial.css';
@@ -6,8 +6,46 @@ import { Select } from '../Select/Select';
 import { Input } from '../Input/Input';
 
 export const PantallaInicial = () => {
-  let navigate = useNavigate();
+  //State del input
+  const [infoInput, setInfoInput] = useState({
+    input: '',
+  });
+  const handleChange = (e) => {
+    setInfoInput({
+      ...infoInput,
+      [e.target.name]: e.target.value,
+    });
+  };
+  const { input } = infoInput;
 
+  //State del select
+  const [infoSelect, setInfoSelect] = useState({
+    select: '',
+  });
+
+  const handleChangeSelect = (e) => {
+    setInfoSelect({
+      ...infoSelect,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const { select } = infoSelect;
+
+  //Funcion validacion del formulario y redirect home
+  const submitForm = (e) => {
+    e.preventDefault();
+    console.log(select);
+    console.log(input);
+    //validar
+    if (input.trim() === '' || select.trim() === '') {
+      alert('Todos los campos son obligatorios');
+      return;
+    }
+    redirectHome();
+  };
+
+  let navigate = useNavigate();
   let redirectHome = () => {
     navigate('/home');
   };
@@ -25,42 +63,29 @@ export const PantallaInicial = () => {
             <Input
               placeholder="Ingrese su nombre"
               type="text"
-              styleclass="one"
               label="Ingrese su nombre:"
-              classlabel="label-form"
+              marginVertical={16}
+              name="input"
+              handleEvent={handleChange}
             />
 
             <Select
               data={[{ label: 'Masculino' }, { label: 'Femenino' }]}
               placeholder="Selecciona un genero"
-              styleclass="two"
-              labelclass="label-form"
               label="Selecciona un genero:"
+              marginVertical={16}
+              name="select"
+              handleEvent={handleChangeSelect}
             />
           </div>
-          <button onClick={redirectHome}>Ver pokemons!</button>
+          <button
+            //onSubmit={submitForm && redirectHome}
+            onClick={submitForm}
+          >
+            Ver pokemons!
+          </button>
         </div>
       </div>
     </div>
   );
 };
-
-/*  
-            
-      <div className="form-inicial">
-            <div className="one">
-              <div className="label-form">
-                <label>Ingresa tu nombre:</label>
-              </div>
-              <Input placeholder="Ingrese su nombre" type="text" />
-            </div>      
-             
-            
-            <div className="two">
-              <div className="label-form">
-                <label>Selecciona tu genero:</label>
-              </div>
-              <Select data={[{ label: 'Masculino' }, { label: 'Femenino' }]} placeholder="Selecciona un genero" />
-            </div>
-            
-            */

@@ -1,0 +1,13 @@
+.ReactModal__Content {
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #21212188;
+}
