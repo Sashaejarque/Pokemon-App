@@ -10,6 +10,7 @@ import { Modal } from '../Modal/Modal';
 import { Navigate, useNavigate } from 'react-router';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { Hover3d } from '../Hover3d/Hover3d';
+import { useFavorites } from '../../hooks/useFavorites';
 
 export const Home = () => {
   let redirect = useNavigate();
@@ -17,11 +18,7 @@ export const Home = () => {
     redirect('/');
   };
 
- const [favsPokemons, setFavsPokemons] = useLocalStorage('favoritos');
- 
- const agregarPokemonFav = () => {
-  console.log('hola')
- }
+  const { favorites, crearFavorito } = useFavorites();
 
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
@@ -91,9 +88,7 @@ export const Home = () => {
                 setPokemonSelected(pokemonClicked);
               }}
               onClickFav={(pokemonId) => {
-                const pokemonFaved = pokemones.find((pok)=> pok.id === pokemon.id);
-                setFavsPokemons(pokemonFaved);
-                console.log('hola')
+                crearFavorito(pokemon);
               }}
             >
               <CardPokemon pokemon={pokemon} />
