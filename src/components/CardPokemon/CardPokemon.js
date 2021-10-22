@@ -33,7 +33,7 @@ export const CardPokemon = ({ pokemon, onClick }) => {
       backgroundColor = '#76AADB';
       break;
     }
-    case 'Poison':
+    case 'Poison  ':
     case 'Psychic':
     case 'Fairy':
     case 'Ghost': {
@@ -55,7 +55,7 @@ export const CardPokemon = ({ pokemon, onClick }) => {
   }
 
   return (
-    <div className="contenedor" onClick={() => onClick && onClick(pokemon.id)}>
+    <div className="contenedor"  /* onClick={() => onClick && onClick(pokemon.id)} */ >
       <div className="content">
         <div className="name-card">
           <p>{pokemon.name.english}</p>

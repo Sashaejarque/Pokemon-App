@@ -7,8 +7,22 @@ import { Header } from '..';
 import './home.css';
 import { Loading } from '..';
 import { Modal } from '../Modal/Modal';
+import { Navigate, useNavigate } from 'react-router';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
+import { Hover3d } from '../Hover3d/Hover3d';
 
 export const Home = () => {
+  let redirect = useNavigate();
+  let redirectPantallaInicial = () => {
+    redirect('/');
+  };
+
+ const [favsPokemons, setFavsPokemons] = useLocalStorage('favoritos');
+ 
+ const agregarPokemonFav = () => {
+  console.log('hola')
+ }
+
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   const [pokemonSelected, setPokemonSelected] = useState(null);
@@ -30,7 +44,13 @@ export const Home = () => {
   ]);
   const [loading, setloading] = useState(false);
 
+  const [valor, setValor] = useLocalStorage('infoInput');
+  const [valorSelect, setValorSelect] = useLocalStorage('infoSelect');
+
   useEffect(() => {
+    if (!valor && !valorSelect) {
+      redirectPantallaInicial();
+    }
     setloading(true);
     getAllPokemons().then((pokemos) => {
       setPokemon(pokemos.filter((pokemon) => !!pokemon.base?.Defense));
@@ -59,16 +79,25 @@ export const Home = () => {
       >
         <CardPokemon pokemon={pokemonSelected} />
       </Modal>
+
       <div className="content-card">
         <div className="cont-card-pokemon">
           {pokemones.map((pokemon) => (
-            <CardPokemon
-              onClick={(pokemonId) => {
-                const pokemonClicked = pokemones.find((pok) => pok.id === pokemonId);
+            <Hover3d
+              width="352"
+              height="136"
+              onClickVerMas={(pokemonId) => {
+                const pokemonClicked = pokemones.find((pok) => pok.id === pokemon.id);
                 setPokemonSelected(pokemonClicked);
               }}
-              pokemon={pokemon}
-            />
+              onClickFav={(pokemonId) => {
+                const pokemonFaved = pokemones.find((pok)=> pok.id === pokemon.id);
+                setFavsPokemons(pokemonFaved);
+                console.log('hola')
+              }}
+            >
+              <CardPokemon pokemon={pokemon} />
+            </Hover3d>
           ))}
         </div>
       </div>

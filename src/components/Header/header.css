@@ -19,13 +19,11 @@
 }
 .nav-links {
   list-style: none;
-  display: flex;
+  display: flex; 
 }
-.nav-links li {
-  padding: 0px 20px;
+.link:hover {
+  color: white;
 }
 
-.nav-links > li:hover {
-  color: white;
-  cursor: pointer;
-}
+
+

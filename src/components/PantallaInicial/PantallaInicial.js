@@ -1,33 +1,25 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Header } from '..';
 import { useNavigate } from 'react-router';
 import './PantallaInicial.css';
 import { Select } from '../Select/Select';
 import { Input } from '../Input/Input';
+import { useLocalStorage } from '../../hooks/useLocalStorage';
 
 export const PantallaInicial = () => {
   //State del input
-  const [infoInput, setInfoInput] = useState({
-    input: '',
-  });
-  const handleChange = (e) => {
-    setInfoInput({
-      ...infoInput,
-      [e.target.name]: e.target.value,
-    });
+  const [infoInput, setInfoInput] = useLocalStorage('infoInput', '');
+
+  const handleChangeInput = (e) => {
+    setInfoInput(e.target.value);
   };
   const { input } = infoInput;
 
   //State del select
-  const [infoSelect, setInfoSelect] = useState({
-    select: '',
-  });
+  const [infoSelect, setInfoSelect] = useLocalStorage('infoSelect', '');
 
   const handleChangeSelect = (e) => {
-    setInfoSelect({
-      ...infoSelect,
-      [e.target.name]: e.target.value,
-    });
+    setInfoSelect(e.target.value);
   };
 
   const { select } = infoSelect;
@@ -35,10 +27,8 @@ export const PantallaInicial = () => {
   //Funcion validacion del formulario y redirect home
   const submitForm = (e) => {
     e.preventDefault();
-    console.log(select);
-    console.log(input);
     //validar
-    if (input.trim() === '' || select.trim() === '') {
+    if (infoInput.trim() === '' || infoSelect === 'Selecciona un genero') {
       alert('Todos los campos son obligatorios');
       return;
     }
@@ -49,6 +39,12 @@ export const PantallaInicial = () => {
   let redirectHome = () => {
     navigate('/home');
   };
+ 
+  useEffect(() => {
+    if ( infoInput && infoSelect)  {
+      redirectHome();
+    }
+  }, []);
 
   return (
     <div className="cont-container">
@@ -66,7 +62,8 @@ export const PantallaInicial = () => {
               label="Ingrese su nombre:"
               marginVertical={16}
               name="input"
-              handleEvent={handleChange}
+              handleEvent={handleChangeInput}
+              value={infoInput}
             />
 
             <Select
@@ -76,16 +73,16 @@ export const PantallaInicial = () => {
               marginVertical={16}
               name="select"
               handleEvent={handleChangeSelect}
+              value={infoSelect}
             />
           </div>
-          <button
-            //onSubmit={submitForm && redirectHome}
-            onClick={submitForm}
-          >
-            Ver pokemons!
-          </button>
+          <button onClick={submitForm}>Ver pokemons!</button>
         </div>
       </div>
     </div>
   );
 };
+
+/*
+
+*/

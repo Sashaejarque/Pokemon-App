@@ -1,14 +1,20 @@
 import React from 'react';
+import { Route, Routes, BrowserRouter, Link, useNavigate } from 'react-router-dom';
 
 const Botones = () => {
   return (
     <div>
       <nav className="nav-botton">
         <ul className="nav-links">
-          <li>Home</li>
-          <li>Pokedex</li>
-          <li>Legendaries</li>
-          <li>Documentation</li>
+          <Link to="/home" style={{ textDecoration: 'none' }}>
+            <p className="link">Home</p>
+          </Link>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <p className="link">Pokedex</p>
+          </Link>
+          <Link to="/" style={{ textDecoration: 'none' }}>
+            <p className="link">Documentation</p>
+          </Link>
         </ul>
       </nav>
     </div>

@@ -17,6 +17,7 @@
   padding-left: 24px;
   padding-top: 6px;
   padding-bottom: 12px;
+  align-items: flex-start;
 }
 
 .at-def-card {
@@ -77,3 +78,4 @@
   width: 168px;
   margin-left: 60px;
 }
+
