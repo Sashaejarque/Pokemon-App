@@ -9,7 +9,7 @@ const Botones = () => {
           <Link to="/home" style={{ textDecoration: 'none' }}>
             <p className="link">Home</p>
           </Link>
-          <Link to="/" style={{ textDecoration: 'none' }}>
+          <Link to="/pokedex" style={{ textDecoration: 'none' }}>
             <p className="link">Pokedex</p>
           </Link>
           <Link to="/" style={{ textDecoration: 'none' }}>

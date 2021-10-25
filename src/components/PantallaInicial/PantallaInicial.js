@@ -76,7 +76,7 @@ export const PantallaInicial = () => {
               value={infoSelect}
             />
           </div>
-          <button onClick={submitForm}>Ver pokemons!</button>
+          <button className='button-pantalla-inicial'onClick={submitForm}>Ver pokemons!</button>
         </div>
       </div>
     </div>

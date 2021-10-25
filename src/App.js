@@ -4,6 +4,7 @@ import '@fontsource/karla';
 import { PantallaInicial } from './components';
 import { Home } from './components/Home';
 import { Error404 } from './components/Error404/Error404';
+import {Pokedex} from './components/Pokedex/Pokedex';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
         <Route path="/" element={<PantallaInicial />} />
         <Route path="/home" element={<Home />} />
         <Route path="*" element={<Error404 />} />
+        <Route path="/pokedex" element={<Pokedex />} />
       </Routes>
     </BrowserRouter>
   );

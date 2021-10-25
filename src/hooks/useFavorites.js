@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { useLocalStorage } from './useLocalStorage';
 
 export function useFavorites() {
-  const [favorites, setFavorites] = useLocalStorage('favorites',[]);
+  const [favorites, setFavorites] = useLocalStorage('favorites', []);
 
   const crearFavorito = (favorito) => {
     if (favorites.find((fav) => fav.id === favorito.id)) {
@@ -12,12 +12,16 @@ export function useFavorites() {
       setFavorites([...favorites, favorito]);
     }
 
-     setFavorites([...favorites, favorito]);
+    setFavorites([...favorites, favorito]);
   };
-  
-  return ({favorites, crearFavorito });
-}
 
+  const quitarFavorito = (pokemonId) => {
+    const eliminarFavorito = favorites.filter(fav => fav.id !== pokemonId.id);
+    setFavorites(eliminarFavorito);
+  };
+
+  return { favorites, crearFavorito, quitarFavorito };
+}
 
 /* 
 if (favorites.filter((fav) => fav.id === favorito.id)) {
@@ -27,4 +31,4 @@ if (favorites.filter((fav) => fav.id === favorito.id)) {
     }
 
      setFavorites([...favorites, favorito]);
-*/ 
+*/
