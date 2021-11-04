@@ -25,7 +25,7 @@ export const Pokedex = () => {
         </div>
       </div>
     );
-
+  
   return (
     <div className="contenedor-favs-pokemon">
       <Header />

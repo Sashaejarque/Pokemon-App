@@ -24,6 +24,16 @@
 .link:hover {
   color: white;
 }
+.icon-header {
+  display: none;
+}
 
-
-
+@media (max-width: 700px) {
+  .nav-botton {
+    display: none;
+  }
+  .icon-header {
+    display: flex;
+    font-size: 50px;
+  }
+}

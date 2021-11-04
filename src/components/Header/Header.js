@@ -10,6 +10,7 @@ export const Header = () => {
         <Logo />
       </div>
       <Botones />
+      <div className="icon-header">=</div>
     </div>
   );
 };

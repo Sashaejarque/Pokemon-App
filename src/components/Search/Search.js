@@ -3,14 +3,14 @@ import './search.css';
 import { Select } from '../Select/Select';
 import { Input } from '..';
 
-export const Search = () => {
+export const Search = ({propChange}) => {
   return (
     <div className="container-search">
       <div className="search-text">
         <h1>800 Pokemons for you to choose your favorite</h1>
       </div>
       <div className="input-search">
-        <Input type="search" placeholder="  Encuentra tu Pokemon..." />
+        <Input type="text" placeholder="  Encuentra tu Pokemon..." handleEvent={propChange}/>
       </div>
       <div className="search-select">
         <Select

@@ -12,10 +12,17 @@ import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { Hover3d } from '../Hover3d/Hover3d';
 import { useFavorites } from '../../hooks/useFavorites';
 
+
 export const Home = () => {
   let redirect = useNavigate();
   let redirectPantallaInicial = () => {
     redirect('/');
+  };
+
+  const [searchTerm, setSearchTerm] = useState('');
+  
+  const handleSearch = e => {  
+    setSearchTerm(e.target.value);
   };
 
   const { favorites, crearFavorito } = useFavorites();
@@ -43,6 +50,8 @@ export const Home = () => {
 
   const [valor, setValor] = useLocalStorage('infoInput');
   const [valorSelect, setValorSelect] = useLocalStorage('infoSelect');
+  
+ 
 
   useEffect(() => {
     if (!valor && !valorSelect) {
@@ -67,7 +76,9 @@ export const Home = () => {
   return (
     <div className="page-container">
       <Header />
-      <Search />
+      <Search
+      propChange={handleSearch}
+      />
       <Modal
         open={pokemonSelected !== null}
         closeModal={() => {
@@ -79,7 +90,13 @@ export const Home = () => {
 
       <div className="content-card">
         <div className="cont-card-pokemon">
-          {pokemones.map((pokemon) => (
+          {pokemones.filter((pokemon) => {
+            if(searchTerm === '') {
+              return pokemon
+            } else if(pokemon.name.english.toLowerCase().includes(searchTerm.toLowerCase())) {
+              return pokemon
+            }
+          }).map((pokemon) => (
             <Hover3d
               width="352"
               height="136"
