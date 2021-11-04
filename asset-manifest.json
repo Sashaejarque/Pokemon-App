@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Pokemon-App/static/css/main.2ba1b17f.chunk.css",
+    "main.js": "/Pokemon-App/static/js/main.ca52db5d.chunk.js",
+    "main.js.map": "/Pokemon-App/static/js/main.ca52db5d.chunk.js.map",
+    "runtime-main.js": "/Pokemon-App/static/js/runtime-main.74de9310.js",
+    "runtime-main.js.map": "/Pokemon-App/static/js/runtime-main.74de9310.js.map",
+    "static/css/2.55dfa918.chunk.css": "/Pokemon-App/static/css/2.55dfa918.chunk.css",
+    "static/js/2.86c1780c.chunk.js": "/Pokemon-App/static/js/2.86c1780c.chunk.js",
+    "static/js/2.86c1780c.chunk.js.map": "/Pokemon-App/static/js/2.86c1780c.chunk.js.map",
+    "static/js/3.bb30d53e.chunk.js": "/Pokemon-App/static/js/3.bb30d53e.chunk.js",
+    "static/js/3.bb30d53e.chunk.js.map": "/Pokemon-App/static/js/3.bb30d53e.chunk.js.map",
+    "index.html": "/Pokemon-App/index.html",
+    "static/css/2.55dfa918.chunk.css.map": "/Pokemon-App/static/css/2.55dfa918.chunk.css.map",
+    "static/css/main.2ba1b17f.chunk.css.map": "/Pokemon-App/static/css/main.2ba1b17f.chunk.css.map",
+    "static/js/2.86c1780c.chunk.js.LICENSE.txt": "/Pokemon-App/static/js/2.86c1780c.chunk.js.LICENSE.txt",
+    "static/media/BannerComplete.93f3dd7e.png": "/Pokemon-App/static/media/BannerComplete.93f3dd7e.png",
+    "static/media/error404.css": "/Pokemon-App/static/media/Team_Rocket_trio_OS 1.9a7a1eed.png",
+    "static/media/index.css": "/Pokemon-App/static/media/karla-latin-ext-400-normal.dc678fe6.woff2"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.74de9310.js",
+    "static/css/2.55dfa918.chunk.css",
+    "static/js/2.86c1780c.chunk.js",
+    "static/css/main.2ba1b17f.chunk.css",
+    "static/js/main.ca52db5d.chunk.js"
+  ]
+}
