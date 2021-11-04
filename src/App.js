@@ -10,7 +10,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<PantallaInicial />} />
+        <Route path="/Pokemon-App" element={<PantallaInicial />} />
         <Route path="/home" element={<Home />} />
         <Route path="*" element={<Error404 />} />
         <Route path="/pokedex" element={<Pokedex />} />
