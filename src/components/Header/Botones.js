@@ -6,13 +6,13 @@ const Botones = () => {
     <div>
       <nav className="nav-botton">
         <ul className="nav-links">
-          <Link to="https://sashaejarque.github.io/Pokemon-App/home" style={{ textDecoration: 'none' }}>
+          <Link to="/home" style={{ textDecoration: 'none' }}>
             <p className="link">Home</p>
           </Link>
-          <Link to="https://sashaejarque.github.io/Pokemon-App/pokedex" style={{ textDecoration: 'none' }}>
+          <Link to="/pokedex" style={{ textDecoration: 'none' }}>
             <p className="link">Pokedex</p>
           </Link>
-          <Link to="https://sashaejarque.github.io/Pokemon-App/home" style={{ textDecoration: 'none' }}>
+          <Link to="/home" style={{ textDecoration: 'none' }}>
             <p className="link">Documentation</p>
           </Link>
         </ul>

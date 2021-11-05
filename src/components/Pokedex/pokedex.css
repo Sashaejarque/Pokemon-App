@@ -11,14 +11,14 @@
 }
 
 .content-cardpokedex {
-  width: 1136px;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .caja {
   display: flex;
-  width: 920px;
+  width: 80%;
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 18px;

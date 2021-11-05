@@ -9,7 +9,7 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-
+  background-color: rgb(65, 64, 64);
   height: 100%;
   width: 100%;
   min-height: 100vh;
@@ -52,7 +52,5 @@ button {
   box-shadow: inset 0px -9px 0px rgba(0, 0, 0, 0.18);
   font-weight: 500;
 }
-.cont-container {
-   background: linear-gradient(180deg, #f5db13 0%, #f2b807 100%);
-}
+
 

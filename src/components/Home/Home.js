@@ -3,7 +3,6 @@ import { useState, useEffect, Fragment } from 'react';
 import { CardPokemon } from '..';
 import { getAllPokemons } from '../../services';
 import { Search } from '../Search/Search';
-import { Header } from '..';
 import './home.css';
 import { Loading } from '..';
 import { Modal } from '../Modal/Modal';
@@ -11,12 +10,13 @@ import { Navigate, useNavigate } from 'react-router';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
 import { Hover3d } from '../Hover3d/Hover3d';
 import { useFavorites } from '../../hooks/useFavorites';
+import { Header2 } from '../Header2/Header2';
 
 
 export const Home = () => {
   let redirect = useNavigate();
   let redirectPantallaInicial = () => {
-    redirect('https://sashaejarque.github.io/Pokemon-App');
+    redirect('/');
   };
 
   const [searchTerm, setSearchTerm] = useState('');
@@ -67,7 +67,7 @@ export const Home = () => {
   if (loading)
     return (
       <div>
-        <Header />
+        <Header2 />
         <Search />
         <Loading />
       </div>
@@ -75,7 +75,7 @@ export const Home = () => {
 
   return (
     <div className="page-container">
-      <Header />
+      <Header2 />
       <Search
       propChange={handleSearch}
       />

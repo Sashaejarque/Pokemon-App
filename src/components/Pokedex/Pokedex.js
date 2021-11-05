@@ -1,10 +1,10 @@
 import React from 'react';
 import { useEffect } from 'react';
 import './pokedex.css';
-import { Header, Search } from '..';
 import { useFavorites } from '../../hooks/useFavorites';
 import { Texto } from '../Texto/Texto';
 import { CardPokedex } from '../CardPokedex/CardPokedex';
+import { Header2 } from '../Header2/Header2';
 
 import Banner from './BannerComplete.png';
 
@@ -14,7 +14,7 @@ export const Pokedex = () => {
   if (favorites.length === 0)
     return (
       <div className="content-content-nopokemons">
-        <Header />
+        <Header2 />
         <div className="content-no-pokemons">
           <div className="no-favs-pokemons">
             <Texto text={`Todavia no hay Pokemons en favoritos, ve y agrega uno!`} />
@@ -28,7 +28,7 @@ export const Pokedex = () => {
   
   return (
     <div className="contenedor-favs-pokemon">
-      <Header />
+      <Header2 />
       <div className="text-container">
         <h1>Tus pokemones favoritos:</h1>
       </div>

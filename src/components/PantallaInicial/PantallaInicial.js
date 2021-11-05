@@ -5,6 +5,7 @@ import './PantallaInicial.css';
 import { Select } from '../Select/Select';
 import { Input } from '../Input/Input';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
+import {Header2} from '../Header2/Header2';
 
 export const PantallaInicial = () => {
   //State del input
@@ -37,7 +38,7 @@ export const PantallaInicial = () => {
 
   let navigate = useNavigate();
   let redirectHome = () => {
-    navigate('https://sashaejarque.github.io/Pokemon-App/home');
+    navigate('/home');
   };
  
   useEffect(() => {
@@ -48,7 +49,7 @@ export const PantallaInicial = () => {
 
   return (
     <div className="cont-container">
-      <Header />
+      <Header2 />
       <div className="app-container2">
         <div className="form-content">
           <div className="titulo-inicial">

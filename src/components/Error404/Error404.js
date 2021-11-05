@@ -7,7 +7,7 @@ import logo404 from './Team_Rocket_trio_OS 1.png';
 export const Error404 = () => {
   let navigate = useNavigate();
   let redirectHome = () => {
-    navigate('https://sashaejarque.github.io/Pokemon-App');
+    navigate('/');
   };
 
   return (
