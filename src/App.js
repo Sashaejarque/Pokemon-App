@@ -12,7 +12,7 @@ function App() {
       <Routes>
         <Route path="https://sashaejarque.github.io/Pokemon-App" element={<PantallaInicial />} />
         <Route path="https://sashaejarque.github.io/Pokemon-App/home" element={<Home />} />
-        <Route path="*" element={<Error404 />} />
+        <Route path="https://sashaejarque.github.io/Pokemon-App/*" element={<Error404 />} />
         <Route path="https://sashaejarque.github.io/Pokemon-App/pokedex" element={<Pokedex />} />
       </Routes>
     </BrowserRouter>

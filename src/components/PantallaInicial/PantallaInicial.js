@@ -37,7 +37,7 @@ export const PantallaInicial = () => {
 
   let navigate = useNavigate();
   let redirectHome = () => {
-    navigate('/home');
+    navigate('https://sashaejarque.github.io/Pokemon-App/home');
   };
  
   useEffect(() => {

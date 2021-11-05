@@ -16,7 +16,7 @@ import { useFavorites } from '../../hooks/useFavorites';
 export const Home = () => {
   let redirect = useNavigate();
   let redirectPantallaInicial = () => {
-    redirect('/');
+    redirect('https://sashaejarque.github.io/Pokemon-App');
   };
 
   const [searchTerm, setSearchTerm] = useState('');
