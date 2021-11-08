@@ -3,7 +3,7 @@ import { useState } from 'react';
 import './header2.css';
 import Icon from './BurgenBtn.png';
 import Logo from './Logo.png';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 export const Header2 = () => {
   const [showLinks, setShowLinks] = useState(false);
@@ -15,21 +15,25 @@ export const Header2 = () => {
     }
   };
 
+  let redirect = useNavigate();
+  let redirectPantallaInicial = () => {
+    redirect('/');
+  };
   return (
     <div className="headerContainer">
       <div className="leftContainer">
-        <img src={Logo} className="logoFull" />
-        <img src={Logo} className="logoResponsive" />
+        <img src={Logo} className="logoFull" onClick={redirectPantallaInicial} />
+        <img src={Logo} className="logoResponsive" onClick={redirectPantallaInicial} />
       </div>
       <div className="rigthContainer">
         <div className="linkContainer">
-          <Link to="/home" style={{ textDecoration: 'none', fontSize:25 }}>
+          <Link to="/home" style={{ textDecoration: 'none', fontSize: 25 }}>
             <p className="link">Home</p>
           </Link>
-          <Link to="/pokedex" style={{ textDecoration: 'none',fontSize:25 }}>
+          <Link to="/pokedex" style={{ textDecoration: 'none', fontSize: 25 }}>
             <p className="link">Pokedex</p>
           </Link>
-          <Link to="/home" style={{ textDecoration: 'none',fontSize:25 }}>
+          <Link to="/home" style={{ textDecoration: 'none', fontSize: 25 }}>
             <p className="link">Documentation</p>
           </Link>
         </div>

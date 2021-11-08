@@ -77,7 +77,7 @@
   width: 270px;
   height: 80px;
   font-size: 12px;
-  overflow-y: scroll;
+  /* overflow-y: scroll; */
 }
 
 .quitar-pokedex {
@@ -88,7 +88,8 @@
   align-items: center;
 }
 .quitar-pokedex-info {
-  background-color: red;
+  background-color: #F5DB13;
+  box-shadow: 15px 4px 16px rgba(1, 28, 64, 0.2);
   height: 19px;
   width: 150px;
   display: flex;
@@ -96,6 +97,14 @@
   align-items: center;
   border-radius: 8px;
   border: 1.5px solid black;
-  box-shadow: inset 0px -9px 0px rgba(0, 0, 0, 0.18);
   cursor: pointer;
+}
+.quitar-pokedex-info:hover {
+  width: 175px;
+  height: 24px;
+  background-color: red; 
+  transition: all 1s;
+  border-radius: 85px;
+  font-size: 18px;
+  
 }

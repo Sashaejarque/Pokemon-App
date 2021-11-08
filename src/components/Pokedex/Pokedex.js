@@ -1,5 +1,4 @@
 import React from 'react';
-import { useEffect } from 'react';
 import './pokedex.css';
 import { useFavorites } from '../../hooks/useFavorites';
 import { Texto } from '../Texto/Texto';
@@ -17,7 +16,7 @@ export const Pokedex = () => {
         <Header2 />
         <div className="content-no-pokemons">
           <div className="no-favs-pokemons">
-            <Texto text={`Todavia no hay Pokemons en favoritos, ve y agrega uno!`} />
+            <Texto text={`Todavia no hay Pokemons en favoritos, ve y agrega uno!`} textstyle="texto-pokedex" />
           </div>
           <div className="content-logos-nopokemons">
             <img src={Banner} className="banner" />
@@ -25,12 +24,12 @@ export const Pokedex = () => {
         </div>
       </div>
     );
-  
+
   return (
     <div className="contenedor-favs-pokemon">
       <Header2 />
       <div className="text-container">
-        <h1>Tus pokemones favoritos:</h1>
+        <h1 className="text-pokedex">Tus pokemones favoritos:</h1>
       </div>
 
       <div className="content-cardpokedex">

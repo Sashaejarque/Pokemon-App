@@ -7,6 +7,11 @@
   align-items: center;
   justify-content: center;
 }
+.c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 .p-404 {
   font-size: 100%;
@@ -43,9 +48,8 @@
   justify-content: center;
   width: 100%;
   height: 400px;
-  margin-top: 0;
 }
-.container-abs {
+ .container-abs {
   display: flex;
   position: absolute;
   top: 0;
@@ -55,9 +59,9 @@
   bottom: 150px;
   align-items: center;
   justify-content: center;
-}
+} 
 
-.container-relativo {
+/* .container-relativo {
   background-color: steelblue;
   background-image: url('./Team_Rocket_trio_OS 1.png');
   background-position: center center;
@@ -66,10 +70,57 @@
   width: 30%;
   height: 40%;
   overflow: visible;
-}
+}  */
 .logo-404-1 {
-  height: calc(623px/2);
-  width: calc(690px/2);
+  height: calc(623px / 2);
+  width: calc(690px / 2);
   position: relative;
   padding: 10px 10px 30px 10px;
 }
+.container-404-responsive {
+  display: none;
+}
+
+@media only screen and (max-width: 700px) {
+  .container-404 {
+    display: none;
+  }
+  .container-404-responsive {
+    background-color: #d93e30;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .cuatro-container-responsive {
+    width: 90%;
+    height: 240px;
+    font-size: 200px;
+    color: #00000080;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-right: 6%;
+  }
+  .downtext-responsive {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-size: 25px;
+    text-align: center;
+    font-weight: 700;
+  }
+  .p2-404-a-responsive {
+    padding-left: 10px;
+    color: white;
+  }
+  .logo-404-1 {
+    width: 262px;
+    height: 236px;
+  }
+} 

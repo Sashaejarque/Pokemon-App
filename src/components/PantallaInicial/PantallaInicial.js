@@ -5,7 +5,7 @@ import './PantallaInicial.css';
 import { Select } from '../Select/Select';
 import { Input } from '../Input/Input';
 import { useLocalStorage } from '../../hooks/useLocalStorage';
-import {Header2} from '../Header2/Header2';
+import { Header2 } from '../Header2/Header2';
 
 export const PantallaInicial = () => {
   //State del input
@@ -40,9 +40,9 @@ export const PantallaInicial = () => {
   let redirectHome = () => {
     navigate('/home');
   };
- 
+
   useEffect(() => {
-    if ( infoInput && infoSelect)  {
+    if (infoInput && infoSelect) {
       redirectHome();
     }
   }, []);
@@ -53,7 +53,7 @@ export const PantallaInicial = () => {
       <div className="app-container2">
         <div className="form-content">
           <div className="titulo-inicial">
-            <a>Bienvenidos entrenadores pokemon!</a>
+            <a>Bienvenidos entrenadores!</a>
           </div>
 
           <div className="form-inicial">
@@ -77,7 +77,9 @@ export const PantallaInicial = () => {
               value={infoSelect}
             />
           </div>
-          <button className='button-pantalla-inicial'onClick={submitForm}>Ver pokemons!</button>
+          <button className="button-pantalla-inicial" onClick={submitForm}>
+            Ver pokemons!
+          </button>
         </div>
       </div>
     </div>

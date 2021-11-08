@@ -11,7 +11,7 @@ export const Error404 = () => {
   };
 
   return (
-    <>
+    <div className="c">
       <div className="container-404">
         <div className="pp-404">
           <p className="p-404">404</p>
@@ -28,6 +28,21 @@ export const Error404 = () => {
       <div className="container-abs">
         <img src={logo404} className="logo-404-1" height={623} width={690} />
       </div>
-    </>
+      <div className="container-404-responsive">
+        <div className="cuatro-container-responsive">
+          <p>404</p>
+        </div>
+        <div className="downtext-responsive">
+          <div className="p2-404-responsive">
+            <p className="p2-404-a-responsive">The rocket team &nbsp;</p>
+
+            <p className="p2-404-b-responsive">has won this time</p>
+          </div>
+          <button onClick={redirectHome} className="button-404">
+            Return
+          </button>
+        </div>
+      </div>
+    </div>
   );
 };
